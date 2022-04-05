@@ -12,6 +12,8 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { createAccount } from '../../firebase/auth';
+import { useNavigate } from 'react-router-dom';
+
 
 function Copyright(props: any) {
   return (
@@ -29,7 +31,7 @@ function Copyright(props: any) {
 const theme = createTheme();
 
 export const SignUp = () => {
-  
+  const navigate = useNavigate()
 
 
 
@@ -45,6 +47,7 @@ export const SignUp = () => {
         password: data.get('password'),
       });
       const accountCreated = await createAccount(data.get('email'), data.get('password'));
+      navigate('/')
       console.log(accountCreated);
     } catch (error) { 
       console.log(error);
@@ -53,6 +56,9 @@ export const SignUp = () => {
     
   };
 
+  const handleLogin = () => {
+    navigate('/login')
+  }
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -132,7 +138,7 @@ export const SignUp = () => {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link variant="body2" onClick={handleLogin}>
                   Already have an account? Sign in
                 </Link>
               </Grid>

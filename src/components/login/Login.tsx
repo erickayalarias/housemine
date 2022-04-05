@@ -12,6 +12,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { loginWithGoogle, singinFirebase } from '../../firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 function Copyright(props: any) {
   return (
@@ -30,7 +31,7 @@ const theme = createTheme();
 
 export function SignIn() {
     //states
-
+    const navigate = useNavigate()
 
 
   //functions
@@ -40,6 +41,7 @@ export function SignIn() {
       const data = new FormData(event.currentTarget);
       const userLogged = await singinFirebase(data.get('email'), data.get('password'));
       console.log(userLogged);
+      navigate('/')
     } catch (error) {
       console.log(error)
     }
@@ -49,6 +51,9 @@ export function SignIn() {
     console.log("ajsjska")
     const data = await loginWithGoogle()
     console.log(data)
+  }
+  const handleSignup = () => {
+    navigate('/signup')
   }
 
   return (
@@ -109,7 +114,8 @@ export function SignIn() {
                 </Link>
               </Grid>
               <Grid item>
-                <Link href="#" variant="body2">
+
+                <Link variant="body2"  onClick={handleSignup}>
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
