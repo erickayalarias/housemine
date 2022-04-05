@@ -1,5 +1,5 @@
 import { createTheme } from '@mui/material/styles';
-import { red,  } from '@mui/material/colors';
+// import { red,  } from '@mui/material/colors';
 
 
 export const lightTheme = createTheme({
@@ -55,9 +55,9 @@ export const lightTheme = createTheme({
     MuiButton: {
       defaultProps: {
         variant: 'contained',
-        size: 'small',
+        size: 'large',
         disableElevation: true,
-        color: 'info'
+        color: 'primary',
       },
       styleOverrides: {
         root: {
@@ -65,7 +65,7 @@ export const lightTheme = createTheme({
           boxShadow: 'none',
           borderRadius: 10,
           ":hover": {
-            backgroundColor: 'rgba(0,0,0,0.05)',
+            backgroundColor: '#3A64D8',
             transition: 'all 0.3s ease-in-out'
           }
         }

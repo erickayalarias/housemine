@@ -83,6 +83,7 @@ export function SignIn() {
               label="Email Address"
               name="email"
               autoComplete="email"
+              placeholder='test@assemblerschool.com'
               autoFocus
             />
             <TextField

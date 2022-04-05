@@ -10,7 +10,6 @@ import Box from '@mui/material/Box';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { createAccount } from '../../firebase/auth';
 import { useNavigate } from 'react-router-dom';
 
@@ -20,7 +19,7 @@ function Copyright(props: any) {
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
       {'Copyright © '}
       <Link color="inherit" href="https://mui.com/">
-        Your Website
+       Housemine
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -28,7 +27,7 @@ function Copyright(props: any) {
   );
 }
 
-const theme = createTheme();
+// const theme = createTheme();
 
 export const SignUp = () => {
   const navigate = useNavigate()
@@ -60,7 +59,6 @@ export const SignUp = () => {
     navigate('/login')
   }
   return (
-    <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
         <CssBaseline />
         <Box
@@ -121,12 +119,7 @@ export const SignUp = () => {
                   autoComplete="new-password"
                 />
               </Grid>
-              <Grid item xs={12}>
-                <FormControlLabel
-                  control={<Checkbox value="allowExtraEmails" color="primary" />}
-                  label="I want to receive inspiration, marketing promotions and updates via email."
-                />
-              </Grid>
+            
             </Grid>
             <Button
               type="submit"
@@ -147,6 +140,6 @@ export const SignUp = () => {
         </Box>
         <Copyright sx={{ mt: 5 }} />
       </Container>
-    </ThemeProvider>
+
   );
 }
