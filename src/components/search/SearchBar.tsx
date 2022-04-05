@@ -3,12 +3,15 @@ import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
 import Card from '@mui/material/Card';
+import { useState } from 'react';
 
 export const SearchBar = () => {
+    const [value, setValue] = useState<String | null>(null)
     
-    const onhandleChange = (e) => {
-        console.log(e.focus);
-        console.log(e.target.defaultValue);
+    const onhandleChange = (event:any , newValue:string|null ) => {
+        console.log(newValue)
+       return setValue(newValue)
+        
 }
     return (
         <Card sx={{ maxWidth: 500, pt:5 , pb:1}}>
@@ -18,16 +21,20 @@ export const SearchBar = () => {
                     id="free-solo-2-demo"
                     onChange={onhandleChange}
         options={top100Films.map((option) => option.title)}
-        renderInput={(params) => (
-          <TextField
+        renderInput={(params) => {
+            console.log(params)
+          return <TextField
             {...params}
             label="Search input"
             InputProps={{
               ...params.InputProps,
               type: 'search',
             }}
-          />
-        )}
+            />
+            
+                    }}
+                 
+                    value={value}
       />
     </Stack>
     </Card>
