@@ -45,10 +45,9 @@ export function SignIn() {
     }
   };
 
-  const onhandleSubmitGoogle = async (event) => {
-    event.preventDefault()
-    console.log("jasjkdajnhasd")
-    const data =  await loginWithGoogle()
+  const onhandleSubmitGoogle = async () => {
+    console.log("ajsjska")
+    const data = await loginWithGoogle()
     console.log(data)
   }
 
@@ -116,17 +115,16 @@ export function SignIn() {
               </Grid>
             </Grid>
           </Box>
-        </Box>
-          <Box mt={8} onSubmit={onhandleSubmitGoogle} noValidate >
+          <Box mt={8} onClick={onhandleSubmitGoogle}>
             <Button
               type="submit"
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
-          />
-          singgoogle
+            />
           </Box>
-        {/* <Copyright sx={{ mt: 8, mb: 4 }} /> */}
+        </Box>
+        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );
