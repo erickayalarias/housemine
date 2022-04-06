@@ -16,6 +16,7 @@ import {
 } from '../helper/query';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+// import imagenMia  from "../images/"
 
 // json-server --watch json/Basic.json;
 
@@ -44,7 +45,9 @@ export const Home = () => {
           if (item.id === 1) {
             return item.propertiesId;
           }
+
         });
+
         const favorite = propertiesResponse.data.filter((item) =>
           properties.includes(item.id)
         );

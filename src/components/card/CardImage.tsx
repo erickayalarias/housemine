@@ -1,9 +1,8 @@
 import * as React from 'react';
 import Card from '@mui/material/Card';
-import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Button from '@mui/material/Button';
+
 import Typography from '@mui/material/Typography';
 
 export function CardImage({
@@ -13,14 +12,19 @@ export function CardImage({
   description,
   children,
 }) {
-  const image2 = image || 'https://source.unsplash.com/random';
+
+
+let imagenErick = require(`../../images/${image}`)
+  // let logo = require(image);
+
+  // const image2 = image || 'https://source.unsplash.com/random';
 
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardMedia>
-        <img src={image2} alt="pepe" width={50} height={50} />
       </CardMedia>
       <CardContent>
+        <img src={imagenErick} alt="pepe" width={100} height={100} />
         <Typography gutterBottom variant="h5" component="div">
           {province}
         </Typography>
