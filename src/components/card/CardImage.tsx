@@ -13,14 +13,13 @@ export function CardImage({
   description,
   children,
 }) {
+  const image2 = image || 'https://source.unsplash.com/random';
+
   return (
     <Card sx={{ maxWidth: 345 }}>
-      <CardMedia
-        component="img"
-        height="140"
-        image={image}
-        alt="green iguana"
-      />
+      <CardMedia>
+        <img src={image2} alt="pepe" width={50} height={50} />
+      </CardMedia>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {province}

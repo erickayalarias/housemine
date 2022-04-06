@@ -80,9 +80,10 @@ export const Home = () => {
               {favorite.map((item) => (
                 <CardImage
                   province={item.province}
-                  decription={item.description}
+                  description={item.country}
                   price={item.price}
                   image={item.image}
+                  key={item.id}
                 ></CardImage>
               ))}
             </CardText>

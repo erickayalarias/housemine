@@ -22,7 +22,6 @@ export const SearchBar = () => {
           onChange={onhandleChange}
           options={top100Films.map((option) => option.title)}
           renderInput={(params) => {
-            console.log(params);
             return (
               <TextField
                 {...params}

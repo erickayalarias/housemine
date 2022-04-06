@@ -49,7 +49,7 @@
       "swimming_pool": false,
       "terrace": true,
       "publication_date": "2020/12/01 01:01:01",
-      "image": "../src/images/pexels-athena-6782749.jpg"
+      "image": "../../images/pexels-athena-6782749.jpg"
     },
     {
       "id": 2,
