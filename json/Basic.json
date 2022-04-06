@@ -48,7 +48,8 @@
       "air_conditioning": true,
       "swimming_pool": false,
       "terrace": true,
-      "publication_date": "2020/12/01 01:01:01"
+      "publication_date": "2020/12/01 01:01:01",
+      "image": "../src/images/pexels-athena-6782749.jpg"
     },
     {
       "id": 2,
@@ -72,7 +73,8 @@
       "air_conditioning": false,
       "swimming_pool": true,
       "terrace": true,
-      "publication_date": "2020/12/01 01:01:01"
+      "publication_date": "2020/12/01 01:01:01",
+      "image": "../src/images/pexels-charlotte-may-5824496.jpg"
     },
     {
       "id": 3,
@@ -96,7 +98,8 @@
       "air_conditioning": false,
       "swimming_pool": false,
       "terrace": false,
-      "publication_date": "2020/12/01 01:01:01"
+      "publication_date": "2020/12/01 01:01:01",
+      "image": "../src/images/pexels-daria-shevtsova-698170.jpeg"
     },
     {
       "id": 4,
@@ -120,7 +123,8 @@
       "air_conditioning": false,
       "swimming_pool": false,
       "terrace": false,
-      "publication_date": "2020/12/01 01:01:01"
+      "publication_date": "2020/12/01 01:01:01",
+      "image": "../src/images/pexels-daria-shevtsova-892618.jpeg"
     },
     {
       "id": 5,
@@ -144,7 +148,8 @@
       "air_conditioning": true,
       "swimming_pool": false,
       "terrace": false,
-      "publication_date": "2020/12/01 01:01:01"
+      "publication_date": "2020/12/01 01:01:01",
+      "image": "../src/images/pexels-jonathan-borba-5570224.jpeg"
     },
     {
       "id": 6,
@@ -168,7 +173,8 @@
       "air_conditioning": true,
       "swimming_pool": false,
       "terrace": true,
-      "publication_date": "2020/12/01 01:01:01"
+      "publication_date": "2020/12/01 01:01:01",
+      "image": "../src/images/pexels-ksenia-chernaya-3965563.jpeg"
     },
     {
       "id": 7,
@@ -192,7 +198,8 @@
       "air_conditioning": false,
       "swimming_pool": false,
       "terrace": true,
-      "publication_date": "2020/12/01 01:01:01"
+      "publication_date": "2020/12/01 01:01:01",
+      "image": "../src/images/pexels-max-vakhtbovych-6438760.jpeg"
     },
     {
       "id": 8,
@@ -216,7 +223,8 @@
       "air_conditioning": true,
       "swimming_pool": true,
       "terrace": true,
-      "publication_date": "2020/12/01 01:01:01"
+      "publication_date": "2020/12/01 01:01:01",
+      "image": "../src/images/pexels-max-vakhtbovych-6585598.jpeg"
     },
     {
       "id": 9,
@@ -240,7 +248,8 @@
       "air_conditioning": true,
       "swimming_pool": true,
       "terrace": true,
-      "publication_date": "2020/12/01 01:01:01"
+      "publication_date": "2020/12/01 01:01:01",
+      "image": "../src/images/pexels-monstera-6621052.jpeg"
     },
     {
       "id": 10,
@@ -264,7 +273,8 @@
       "air_conditioning": true,
       "swimming_pool": true,
       "terrace": false,
-      "publication_date": "2020/12/01 01:01:01"
+      "publication_date": "2020/12/01 01:01:01",
+      "image": "../src/images/pexels-olenka-sergienko-5686478.jpeg"
     },
     {
       "id": 11,
@@ -288,18 +298,17 @@
       "air_conditioning": true,
       "swimming_pool": false,
       "terrace": true,
-      "publication_date": "2020/12/01 01:01:01"
+      "publication_date": "2020/12/01 01:01:01",
+      "image": "../src/images/pexels-sunsetoned-7235663.jpeg"
     }
   ],
   "favorite": [
     {
       "id": 1,
-      "userId": 1,
       "propertiesId": 1
     },
     {
       "id": 2,
-      "userId": 1,
       "propertiesId": 2
     }
   ]

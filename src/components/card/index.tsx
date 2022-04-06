@@ -1,1 +1,2 @@
-export * from "./CardText"
+export * from './CardText';
+export * from './CardImage';

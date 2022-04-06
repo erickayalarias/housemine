@@ -5,23 +5,29 @@ import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
-export const CardText=()=> {
+export const CardText = ({ children, title, body }) => {
   return (
-    <Card sx={{ maxWidth: 500 }}>
+    <Card sx={{ maxWidth: 1100, height: 500 }}>
       <CardContent>
-        <Typography gutterBottom variant="h2" component="div">
-          Lizard
+        <Typography
+          gutterBottom
+          variant="h1"
+          component="div"
+          color="text.primary"
+          sx={{ fontWeight: 'bold', pt: 10 }}
+        >
+          {title}
         </Typography>
-        <Typography variant="body1" color="text.secondary">
-          Lizards are a widespread group of squamate reptiles, with over 6,000
-          species, ranging across all continents except Antarctica
+        <Typography
+          variant="body1"
+          color="primary"
+          sx={{ fontSize: 20, pt: 5 }}
+        >
+          {body}
         </Typography>
+        {children}
       </CardContent>
-      <CardActions>
-        <Button size="small">Share</Button>
-        <Button size="small">Learn More</Button>
-      </CardActions>
-       
+      <CardActions></CardActions>
     </Card>
   );
-}
+};

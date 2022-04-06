@@ -1,45 +1,51 @@
-
 import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
 import Card from '@mui/material/Card';
 import { useState } from 'react';
-
+import { CardMedia, IconButton } from '@mui/material';
+import { Search } from '@mui/icons-material';
+import SearchIcon from '@mui/icons-material/Search';
 export const SearchBar = () => {
-    const [value, setValue] = useState<String | null>(null)
-    
-    const onhandleChange = (event:any , newValue:string|null ) => {
-        console.log(newValue)
-       return setValue(newValue)
-        
-}
-    return (
-        <Card sx={{ maxWidth: 500, pt:5 , pb:1}}>
-    <Stack spacing={1} >
-      <Autocomplete
-        freeSolo
-                    id="free-solo-2-demo"
-                    onChange={onhandleChange}
-        options={top100Films.map((option) => option.title)}
-        renderInput={(params) => {
-            console.log(params)
-          return <TextField
-            {...params}
-            label="Search input"
-            InputProps={{
-              ...params.InputProps,
-              type: 'search',
-            }}
-            />
-            
-                    }}
-                 
-                    value={value}
+  const [value, setValue] = useState<String | null>(null);
+
+  const onhandleChange = (event: any, newValue: string | null) => {
+    console.log(newValue);
+    return setValue(newValue);
+  };
+  return (
+    <Card sx={{ maxWidth: 500, height: 500, pt: 5, pb: 1 }}>
+      <Stack spacing={1}>
+        <Autocomplete
+          freeSolo
+          id="free-solo-2-demo"
+          onChange={onhandleChange}
+          options={top100Films.map((option) => option.title)}
+          renderInput={(params) => {
+            console.log(params);
+            return (
+              <TextField
+                {...params}
+                label={<SearchIcon />}
+                InputProps={{
+                  ...params.InputProps,
+                  type: 'search',
+                }}
+              />
+            );
+          }}
+          value={value}
+        />
+      </Stack>
+      <CardMedia
+        component="img"
+        height="500"
+        image="../../images/HouseMine.jpg"
+        alt="green iguana"
       />
-    </Stack>
     </Card>
   );
-}
+};
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
@@ -111,7 +117,8 @@ const top100Films = [
   { title: 'Alien', year: 1979 },
   { title: 'Sunset Boulevard', year: 1950 },
   {
-    title: 'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb',
+    title:
+      'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb',
     year: 1964,
   },
   { title: 'The Great Dictator', year: 1940 },
