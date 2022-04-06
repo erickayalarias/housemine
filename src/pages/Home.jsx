@@ -49,7 +49,6 @@ export const Home = () => {
           if (item.id === 1) {
             return item.propertiesId;
           }
-
         });
 
         const favorite = propertiesResponse.data.filter((item) =>
@@ -68,18 +67,16 @@ export const Home = () => {
       <Container>
         <Grid container spacing={2}>
           <Grid item xs={6} md={6} xl={6}>
-            <CardText title={TitleCard.title} body={TitleCard.body} />
+            <CardText
+              title={TitleCard.title}
+              body={TitleCard.body}
+              height={500}
+            />
           </Grid>
           <Grid item xs={6} md={6} xl={6}>
             <SearchBar />
           </Grid>
-          <Grid
-            item
-            xs={12}
-            md={12}
-            xl={12}
-            sx={{ backgroundColor: 'red' }}
-          >
+          <Grid item xs={12} md={12} xl={12}>
             <CardText
               title={CardTextInfo.title}
               body={CardTextInfo.body}
