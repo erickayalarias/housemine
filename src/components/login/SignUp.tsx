@@ -139,7 +139,7 @@ export const SignUp = () => {
           </Box>
         </Box>
         <Copyright sx={{ mt: 5 }} />
-      </Container>
-
+    </Container>
+  
   );
 }

@@ -16,11 +16,15 @@ import {
 } from '../helper/query';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
+import { useSelector } from "react-redux";
+
 // import imagenMia  from "../images/"
 
 // json-server --watch json/Basic.json;
 
 export const Home = () => {
+  const { status, value } = useSelector(state => state.reducerRealEstate);
+  console.log(status, value);
   const [favorite, setFavorite] = useState([]);
 
   const navigate = useNavigate();

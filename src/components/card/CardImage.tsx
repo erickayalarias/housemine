@@ -12,7 +12,7 @@ export function CardImage({
   description,
   children,
 }) {
-
+  
 
 let imagenErick = require(`../../images/${image}`)
   // let logo = require(image);
