@@ -7,3 +7,8 @@ export var CardTextInfo = {
   title: 'Popular listing',
   body: 'Favorites',
 };
+
+export var CardTextSelected = {
+  title: 'Selected Houses',
+  body: 'Houses',
+};
