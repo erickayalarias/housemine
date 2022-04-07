@@ -16,18 +16,24 @@ import {
 } from '../helper/query';
 import axios from 'axios';
 import { useEffect, useState } from 'react';
-import { useSelector } from "react-redux";
-import { FetchInitialEstate } from '../redux/dbRedux/actions';
-
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  FetchInitialEstate,
+  Province,
+} from '../redux/dbRedux/actions';
 
 // import imagenMia  from "../images/"
 
 // json-server --watch json/Basic.json;
 
 export const Home = () => {
-  const data = useSelector(state => state.reducerRealEstate);
+  const dispatch = useDispatch();
+  const [province, setProvince] = useState('');
+  const data = useSelector(
+    (state) => state.reducerRealEstate.provinces
+  );
+  console.log(data);
   const [favorite, setFavorite] = useState([]);
-  const [province, setProvince] = useState("")
   const navigate = useNavigate();
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -36,7 +42,7 @@ export const Home = () => {
       navigate('/login');
     }
   });
-  
+
   useEffect(() => {
     console.log(data);
     (async () => {
@@ -47,14 +53,14 @@ export const Home = () => {
         const propertiesResponse = await axios.get(
           'http://localhost:3000/properties'
         );
-        let dataProvince = []
-        propertiesResponse.data.forEach(element => { 
+        let dataProvince = [];
+        propertiesResponse.data.forEach((element) => {
           if (!dataProvince.includes(element.province)) {
-            dataProvince.push(element.province)
+            dataProvince.push(element.province);
           }
-        }
-        )
-        setProvince(dataProvince)
+        });
+        dispatch(Province(dataProvince));
+        setProvince(dataProvince);
 
         const properties = favoriteResponse.data.map((item) => {
           if (item.id === 1) {
@@ -69,8 +75,7 @@ export const Home = () => {
       } catch (error) {
         console.log(error);
       }
-      await FetchInitialEstate()
-
+      await FetchInitialEstate();
     })();
   }, []);
 
@@ -87,10 +92,7 @@ export const Home = () => {
             />
           </Grid>
           <Grid item xs={6} md={6} xl={6}>
-            <SearchBar
-              province={province}
-              // defaulImage={}
-            />
+            <SearchBar province={province} defaulImage={'existe'} />
           </Grid>
           <Grid item xs={12} md={12} xl={12}>
             <CardText

@@ -28,7 +28,7 @@ export function CardImage({
           {description}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-          $ {price}
+          {price} €
         </Typography>
       </CardContent>
     </Card>
