@@ -17,26 +17,28 @@ import {
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import { useSelector } from "react-redux";
+import { FetchInitialEstate } from '../redux/dbRedux/actions';
+
 
 // import imagenMia  from "../images/"
 
 // json-server --watch json/Basic.json;
 
 export const Home = () => {
-  const { status, value } = useSelector(state => state.reducerRealEstate);
-  console.log(status, value);
+  const data = useSelector(state => state.reducerRealEstate);
   const [favorite, setFavorite] = useState([]);
-
+  const [province, setProvince] = useState("")
   const navigate = useNavigate();
   onAuthStateChanged(auth, (user) => {
     if (user) {
-      console.log(user);
+      // console.log(user);
     } else {
       navigate('/login');
     }
   });
-
+  
   useEffect(() => {
+    console.log(data);
     (async () => {
       try {
         const favoriteResponse = await axios.get(
@@ -45,6 +47,15 @@ export const Home = () => {
         const propertiesResponse = await axios.get(
           'http://localhost:3000/properties'
         );
+        let dataProvince = []
+        propertiesResponse.data.forEach(element => { 
+          if (!dataProvince.includes(element.province)) {
+            dataProvince.push(element.province)
+          }
+        }
+        )
+        setProvince(dataProvince)
+
         const properties = favoriteResponse.data.map((item) => {
           if (item.id === 1) {
             return item.propertiesId;
@@ -58,6 +69,8 @@ export const Home = () => {
       } catch (error) {
         console.log(error);
       }
+      await FetchInitialEstate()
+
     })();
   }, []);
 
@@ -74,7 +87,10 @@ export const Home = () => {
             />
           </Grid>
           <Grid item xs={6} md={6} xl={6}>
-            <SearchBar />
+            <SearchBar
+              province={province}
+              
+            />
           </Grid>
           <Grid item xs={12} md={12} xl={12}>
             <CardText
