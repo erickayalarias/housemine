@@ -21,7 +21,7 @@ export const SearchBar = ({
 
   const onhandleChange = (event: any, newValue: string | null) => {
     dispatch(readSearch(newValue));
-    if (dashboard != 'dashboard') {
+    if (dashboard !== 'dashboard') {
       navigate('/dashboard');
     }
     return setValue(newValue);
