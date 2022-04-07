@@ -89,7 +89,7 @@ export const Home = () => {
           <Grid item xs={6} md={6} xl={6}>
             <SearchBar
               province={province}
-              defaulImage={"existe"}
+              // defaulImage={}
             />
           </Grid>
           <Grid item xs={12} md={12} xl={12}>
