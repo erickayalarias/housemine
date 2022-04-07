@@ -92,7 +92,7 @@ export const Home = () => {
             />
           </Grid>
           <Grid item xs={6} md={6} xl={6}>
-            <SearchBar province={province} dashboard={'home'} />
+            <SearchBar province={province} defaulImage={'existe'} />
           </Grid>
           <Grid item xs={12} md={12} xl={12}>
             <CardText

@@ -9,7 +9,11 @@ import { useDispatch } from 'react-redux';
 import { readSearch } from '../../redux/dbRedux/actions';
 import { useNavigate } from 'react-router-dom';
 
-export const SearchBar = ({ province, dashboard = 'dashboard' }) => {
+export const SearchBar = ({
+  province,
+  defaulImage = '',
+  dashboard = 'dashboard',
+}) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -45,12 +49,16 @@ export const SearchBar = ({ province, dashboard = 'dashboard' }) => {
           value={value}
         />
       </Stack>
-      <CardMedia
-        component="img"
-        height="500"
-        image="../../images/HouseMine.jpg"
-        alt="green iguana"
-      />
+      {defaulImage !== '' ? (
+        <CardMedia
+          component="img"
+          height="500"
+          image="../../images/HouseMine.jpg"
+          alt="green iguana"
+        />
+      ) : (
+        ''
+      )}
     </Card>
   );
 };
