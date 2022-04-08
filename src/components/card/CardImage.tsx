@@ -12,8 +12,10 @@ export function CardImage({
   description,
   children,
 }) {
-  let imagenErick = require(`../../images/${image}`)  ||
-  require('../../images/pexels-athena-6782749.jpg');
+  let imagenErick =
+    require(`../../images/${image}`) ||
+    require('../../images/pexels-athena-6782749.jpg');
+  console.log(image);
 
   // let logo = require(image);
 
