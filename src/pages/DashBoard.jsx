@@ -288,7 +288,7 @@ export const DashBoard = () => {
             body={CardTextSelected.body}
           />
           {query.map((item) => (
-            <Grid item xs={3} md={3} xl={12}>
+            <Grid item xs={3} md={3} xl={12}  key={item.id}>
               <CardImage
                 province={item.province}
                 description={item.country}

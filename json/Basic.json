@@ -99,7 +99,7 @@
       "swimming_pool": false,
       "terrace": false,
       "publication_date": "2020/12/01 01:01:01",
-      "image": "pexels-daria-shevtsova-698170.jpeg"
+      "image": "pexels-daria-shevtsova-698170.jpg"
     },
     {
       "id": 4,
@@ -124,7 +124,7 @@
       "swimming_pool": false,
       "terrace": false,
       "publication_date": "2020/12/01 01:01:01",
-      "image": "pexels-daria-shevtsova-892618.jpeg"
+      "image": "pexels-daria-shevtsova-892618.jpg"
     },
     {
       "id": 5,
@@ -149,7 +149,7 @@
       "swimming_pool": false,
       "terrace": false,
       "publication_date": "2020/12/01 01:01:01",
-      "image": "pexels-jonathan-borba-5570224.jpeg"
+      "image": "pexels-jonathan-borba-5570224.jpg"
     },
     {
       "id": 6,
@@ -174,7 +174,7 @@
       "swimming_pool": false,
       "terrace": true,
       "publication_date": "2020/12/01 01:01:01",
-      "image": "pexels-ksenia-chernaya-3965563.jpeg"
+      "image": "pexels-ksenia-chernaya-3965563.jpg"
     },
     {
       "id": 7,
@@ -199,7 +199,7 @@
       "swimming_pool": false,
       "terrace": true,
       "publication_date": "2020/12/01 01:01:01",
-      "image": "pexels-max-vakhtbovych-6438760.jpeg"
+      "image": "pexels-max-vakhtbovych-6438760.jpg"
     },
     {
       "id": 8,
@@ -224,7 +224,7 @@
       "swimming_pool": true,
       "terrace": true,
       "publication_date": "2020/12/01 01:01:01",
-      "image": "pexels-max-vakhtbovych-6585598.jpeg"
+      "image": "pexels-max-vakhtbovych-6585598.jpg"
     },
     {
       "id": 9,
@@ -249,7 +249,7 @@
       "swimming_pool": true,
       "terrace": true,
       "publication_date": "2020/12/01 01:01:01",
-      "image": "pexels-monstera-6621052.jpeg"
+      "image": "pexels-monstera-6621052.jpg"
     },
     {
       "id": 10,
@@ -274,7 +274,7 @@
       "swimming_pool": true,
       "terrace": false,
       "publication_date": "2020/12/01 01:01:01",
-      "image": "pexels-olenka-sergienko-5686478.jpeg"
+      "image": "pexels-olenka-sergienko-5686478.jpg"
     },
     {
       "id": 11,
@@ -299,7 +299,7 @@
       "swimming_pool": false,
       "terrace": true,
       "publication_date": "2020/12/01 01:01:01",
-      "image": "pexels-sunsetoned-7235663.jpeg"
+      "image": "pexels-sunsetoned-7235663.jpg"
     }
   ],
   "favorite": [
