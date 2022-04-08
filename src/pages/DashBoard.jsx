@@ -113,15 +113,18 @@ export const DashBoard = () => {
         <Card>
           <Box>
             <Grid container spacing={2}>
-              <Grid item xs={6} md={6} xl={6}>
+              <Grid item xs={6} md={6} xl={12}>
                 <SearchBar province={data.provinces} />
               </Grid>
-              <Grid item xs={6} md={6} xl={6}>
+              <Grid item xs={6} md={6} xl={12}>
                 <FormGroup>
-                  <Typography variant="subtitle1">
-                    Bedrooms
-                  </Typography>
-                  <Grid container spacing={2}>
+                  <Grid container spacing={6} direction="row">
+                    <Typography
+                      variant="subtitle1"
+                      sx={{ pt: 7, pl: 7 }}
+                    >
+                      Bedrooms
+                    </Typography>
                     <Grid item xs={6} md={6} xl={6}>
                       <FormControlLabel
                         control={<Checkbox />}
@@ -129,24 +132,20 @@ export const DashBoard = () => {
                         name="room1"
                         onClick={handleChangeAll}
                       />
-                    </Grid>
-                    <Grid item xs={6} md={6} xl={6}>
                       <FormControlLabel
                         control={<Checkbox />}
                         label="2"
                         name="room2"
                         onClick={handleChangeAll}
                       />
-                    </Grid>
-                    <Grid item xs={6} md={6} xl={6}>
+
                       <FormControlLabel
                         control={<Checkbox />}
                         label="3"
                         name="room3"
                         onClick={handleChangeAll}
                       />
-                    </Grid>
-                    <Grid item xs={6} md={6} xl={6}>
+
                       <FormControlLabel
                         control={<Checkbox />}
                         label="4"
@@ -155,10 +154,13 @@ export const DashBoard = () => {
                       />
                     </Grid>
                   </Grid>
-                  <Typography variant="subtitle1" sx={{ pt: 3 }}>
-                    Bathrooms
-                  </Typography>
                   <Grid container spacing={2}>
+                    <Typography
+                      variant="subtitle1"
+                      sx={{ pt: 3, pl: 3 }}
+                    >
+                      Bathrooms
+                    </Typography>
                     <Grid item xs={6} md={6} xl={6}>
                       <FormControlLabel
                         control={<Checkbox />}
@@ -166,16 +168,14 @@ export const DashBoard = () => {
                         name="bath1"
                         onClick={handleChangeAll}
                       />
-                    </Grid>
-                    <Grid item xs={6} md={6} xl={6}>
+
                       <FormControlLabel
                         control={<Checkbox />}
                         label="2"
                         name="bath2"
                         onClick={handleChangeAll}
                       />
-                    </Grid>
-                    <Grid item xs={6} md={6} xl={6}>
+
                       <FormControlLabel
                         control={<Checkbox />}
                         label="3"
@@ -184,97 +184,103 @@ export const DashBoard = () => {
                       />
                     </Grid>
                   </Grid>
+                </FormGroup>
+              </Grid>
+              <Grid item xs={6} md={6} xl={12}>
+                <Typography
+                  variant="subtitle1"
+                  sx={{ pt: 3, pb: 2, pl: 3 }}
+                >
+                  Price range
+                </Typography>
+                <Grid
+                  container
+                  spacing={2}
+                  sx={{ pt: 3, pb: 2, pl: 3 }}
+                >
+                  <Grid item xs={6} md={6} xl={6}>
+                    <Grid container spacing={7}>
+                      <Grid item xs={6} md={6} xl={6}>
+                        <TextField
+                          id="outlined-basic"
+                          name="minPrice"
+                          variant="outlined"
+                          value={`€ ${value[0]} `}
+                          sx={{ width: '105px' }}
+                        />
+                      </Grid>
+                      <Grid item xs={6} md={6} xl={6}>
+                        <TextField
+                          id="outlined-basic"
+                          name="maxPrice"
+                          variant="outlined"
+                          value={`€ ${value[1]} `}
+                          sx={{ width: '105px' }}
+                        />
+                      </Grid>
+                    </Grid>
+                    <Slider
+                      getAriaLabel={() => 'Temperature range'}
+                      value={value}
+                      onChange={handleChange}
+                      valueLabelDisplay="auto"
+                      min={30000}
+                      max={1000000}
+                      sx={{ pt: 6 }}
+                    />
+                  </Grid>
+                </Grid>
+              </Grid>
+              <Grid container spacing={2}>
+                <FormGroup>
                   <Typography
                     variant="subtitle1"
-                    sx={{ pt: 3, pb: 2 }}
+                    sx={{ pt: 1, pl: 5, pr: 7 }}
                   >
-                    Price range
-                  </Typography>
-                  <Grid container spacing={2}>
-                    <Grid item xs={6} md={6} xl={6}>
-                      <Grid container spacing={7}>
-                        <Grid item xs={6} md={6} xl={6}>
-                          <TextField
-                            id="outlined-basic"
-                            name="minPrice"
-                            variant="outlined"
-                            value={`€ ${value[0]} `}
-                            sx={{ width: '105px' }}
-                          />
-                        </Grid>
-                        <Grid item xs={6} md={6} xl={6}>
-                          <TextField
-                            id="outlined-basic"
-                            name="maxPrice"
-                            variant="outlined"
-                            value={`€ ${value[1]} `}
-                            sx={{ width: '105px' }}
-                          />
-                        </Grid>
-                      </Grid>
-                      <Slider
-                        getAriaLabel={() => 'Temperature range'}
-                        value={value}
-                        onChange={handleChange}
-                        valueLabelDisplay="auto"
-                        min={30000}
-                        max={1000000}
-                        sx={{ pt: 6 }}
-                      />
-                    </Grid>
-                  </Grid>
-                  <Typography variant="subtitle1" sx={{ pt: 1 }}>
                     More Filters
                   </Typography>
-                  <Grid container spacing={2}>
-                    <Grid item xs={6} md={6} xl={6}>
-                      <FormControlLabel
-                        control={<Checkbox />}
-                        label="Pets Allowed"
-                        name="pet"
-                        onClick={handleChangeAll}
-                      />
-                    </Grid>
-                    <Grid item xs={6} md={6} xl={6}>
-                      <FormControlLabel
-                        control={<Checkbox />}
-                        label="Lift"
-                        name="lift"
-                        onClick={handleChangeAll}
-                      />
-                    </Grid>
-                    <Grid item xs={6} md={6} xl={6}>
-                      <FormControlLabel
-                        control={<Checkbox />}
-                        label="Garden"
-                        name="garden"
-                        onClick={handleChangeAll}
-                      />
-                    </Grid>
-                    <Grid item xs={6} md={6} xl={6}>
-                      <FormControlLabel
-                        control={<Checkbox />}
-                        label="air_conditioning Conditioning"
-                        name="air_conditioning"
-                        onClick={handleChangeAll}
-                      />
-                    </Grid>
-                    <Grid item xs={6} md={6} xl={6}>
-                      <FormControlLabel
-                        control={<Checkbox />}
-                        label="Swimming swimming_pool"
-                        name="swimming_pool"
-                        onClick={handleChangeAll}
-                      />
-                    </Grid>
-                    <Grid item xs={6} md={6} xl={6}>
-                      <FormControlLabel
-                        control={<Checkbox />}
-                        label="Terrace"
-                        name="terrace"
-                        onClick={handleChangeAll}
-                      />
-                    </Grid>
+                  <Grid item xs={6} md={6} xl={12}>
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      label="Pets Allowed"
+                      name="pet"
+                      onClick={handleChangeAll}
+                    />
+
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      label="Lift"
+                      name="lift"
+                      onClick={handleChangeAll}
+                    />
+
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      label="Garden"
+                      name="garden"
+                      onClick={handleChangeAll}
+                    />
+
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      label="Air Conditioning"
+                      name="air_conditioning"
+                      onClick={handleChangeAll}
+                    />
+
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      label="Swimming Pool"
+                      name="swimming_pool"
+                      onClick={handleChangeAll}
+                    />
+
+                    <FormControlLabel
+                      control={<Checkbox />}
+                      label="Terrace"
+                      name="terrace"
+                      onClick={handleChangeAll}
+                    />
                   </Grid>
                 </FormGroup>
               </Grid>
@@ -288,7 +294,7 @@ export const DashBoard = () => {
             body={CardTextSelected.body}
           />
           {query.map((item) => (
-            <Grid item xs={3} md={3} xl={12}  key={item.id}>
+            <Grid item xs={3} md={3} xl={3} key={item.id}>
               <CardImage
                 province={item.province}
                 description={item.country}
