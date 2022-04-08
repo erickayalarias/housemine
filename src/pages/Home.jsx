@@ -60,6 +60,7 @@ export const Home = () => {
           }
         });
         dispatch(Province(dataProvince));
+        console.log(dataProvince)
         setProvince(dataProvince);
 
         const properties = favoriteResponse.data.map((item) => {
@@ -71,6 +72,7 @@ export const Home = () => {
         const favorite = propertiesResponse.data.filter((item) =>
           properties.includes(item.id)
         );
+      
         setFavorite(favorite);
       } catch (error) {
         console.log(error);
@@ -92,7 +94,9 @@ export const Home = () => {
             />
           </Grid>
           <Grid item xs={6} md={6} xl={6}>
-            <SearchBar province={province} defaulImage={'existe'} />
+            <SearchBar province={province} defaulImage={'existe'} 
+              dashboard={"dashboardRedirect"}
+            />
           </Grid>
           <Grid item xs={12} md={12} xl={12}>
             <CardText

@@ -2,7 +2,7 @@ import TextField from '@mui/material/TextField';
 import Stack from '@mui/material/Stack';
 import Autocomplete from '@mui/material/Autocomplete';
 import Card from '@mui/material/Card';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { CardMedia } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import { useDispatch } from 'react-redux';
@@ -17,17 +17,24 @@ export const SearchBar = ({
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const [value, setValue] = useState<String | null>(null);
-
+    const [value, setValue] = useState<String | null>(null);
+    const [Image, setImage] = useState<Number>()
   const onhandleChange = (event: any, newValue: string | null) => {
     dispatch(readSearch(newValue));
     if (dashboard !== 'dashboard') {
       navigate('/dashboard');
     }
     return setValue(newValue);
-  };
+    };
+    useEffect(() => { 
+        if (defaulImage !== "") {
+            setImage(200)
+        } else {
+            setImage(500)
+            }
+    },[])
   return (
-    <Card sx={{ maxWidth: 500, height: 500, pt: 5, pb: 1 }}>
+      <Card sx={{ maxWidth: 500, height: `${Image}`, pt: 5, pb: 1 }}>
       <Stack spacing={1}>
         <Autocomplete
           freeSolo
