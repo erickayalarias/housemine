@@ -8,11 +8,14 @@ import Typography from '@mui/material/Typography';
 export function CardImage({
   province,
   price,
-  image,
+  image = 'pexels-athena-6782749.jpg',
   description,
   children,
 }) {
-  let imagenErick = require(`../../images/${image}`);
+  let imagenErick = require(`../../images/${image}` ||
+    'pexels-athena-6782749.jpg');
+  console.log(image);
+
   // let logo = require(image);
 
   // const image2 = image || 'https://source.unsplash.com/random';
