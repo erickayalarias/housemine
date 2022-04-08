@@ -57,6 +57,7 @@ export const DashBoard = () => {
   useEffect(() => {
     (async () => {
       try {
+     
         let allValues = [];
         Object.keys(inputValue).forEach((element) => {
           if (inputValue[element]) {
@@ -82,16 +83,19 @@ export const DashBoard = () => {
           }
           dataMia += element;
         });
+        if (data.searchFilter) {
+            dataMia += `province=${data.searchFilter}`;
+        }
         const response = await axios.get(
           `http://localhost:3000/properties?${dataMia}`
         );
+        
         setQuery(response.data);
-        console.log(query);
       } catch (error) {
         console.log(error);
       }
     })();
-  }, [inputValue]);
+  }, [inputValue, data.searchFilter]);
 
   useEffect(() => {
     (async () => {
@@ -103,7 +107,6 @@ export const DashBoard = () => {
       name: e.target.name,
       checked: e.target.checked,
     };
-    console.log(result);
     return result;
   };
   return (
