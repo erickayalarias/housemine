@@ -44,7 +44,6 @@ export const Home = () => {
   });
 
   useEffect(() => {
-    console.log(data);
     (async () => {
       try {
         const favoriteResponse = await axios.get(

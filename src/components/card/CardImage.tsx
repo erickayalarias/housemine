@@ -15,12 +15,7 @@ export function CardImage({
   let imagenErick =
     require(`../../images/${image}`) ||
     require('../../images/pexels-athena-6782749.jpg');
-  console.log(image);
-
-  // let logo = require(image);
-
-  // const image2 = image || 'https://source.unsplash.com/random';
-
+  
   return (
     <Card sx={{ maxWidth: 300 }}>
       <CardContent>

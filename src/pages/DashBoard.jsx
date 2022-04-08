@@ -22,7 +22,7 @@ import { queryProperties } from '../helper/query';
 
 export const DashBoard = () => {
   const data = useSelector((state) => state.reducerRealEstate);
-  const [value, setValue] = useState([40000, 150000]);
+  const [value, setValue] = useState([40000, 400000]);
   const [query, setQuery] = useState(data.realstate);
   const [inputValue, setinputValue] = useState({
     room1: false,
@@ -57,7 +57,8 @@ export const DashBoard = () => {
   useEffect(() => {
     (async () => {
       try {
-     
+        // price_gte=100000&price_lte=200000
+        console.log(value)
         let allValues = [];
         Object.keys(inputValue).forEach((element) => {
           if (inputValue[element]) {
@@ -87,7 +88,7 @@ export const DashBoard = () => {
             dataMia += `province=${data.searchFilter}`;
         }
         const response = await axios.get(
-          `http://localhost:3000/properties?${dataMia}`
+          `http://localhost:3000/properties?price_gte=${value[0]}&price_lte=${value[1]}&${dataMia}`
         );
         
         setQuery(response.data);
@@ -95,7 +96,7 @@ export const DashBoard = () => {
         console.log(error);
       }
     })();
-  }, [inputValue, data.searchFilter]);
+  }, [inputValue, data.searchFilter, value]);
 
   useEffect(() => {
     (async () => {
